@@ -16,7 +16,7 @@ class NewPost extends Component {
             content: this.state.content,
             author: this.state.author,
         }
-        axios.post('/posts', newPostData)
+        axios.post('http://localhost:5000/api/posts', newPostData)
             .then(response => {
                 console.log(response.data);
             });

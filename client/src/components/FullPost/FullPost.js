@@ -13,7 +13,7 @@ class FullPost extends Component {
             if (!this.state.loadedPost || 
                 (this.state.loadedPost 
                     && this.props.id !== this.state.loadedPost.id)) {
-                axios.get('/posts/'+this.props.id)
+                axios.get('http://localhost:5000/api/posts/'+this.props.id)
                     .then(response => {
                         this.setState({loadedPost: response.data});
                     });
@@ -22,7 +22,7 @@ class FullPost extends Component {
     }
 
     deletePostHandler = () => {
-        axios.delete('/posts/'+this.props.id)
+        axios.delete('http://localhost:5000/api/posts/'+this.props.id)
             .then(response => {
                 console.log(response);
             })
